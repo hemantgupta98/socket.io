@@ -13,7 +13,7 @@ router.get("/user", async (req, res) => {
 // fetch messages by room id
 router.get("/chat/:room", async (req, res) => {
   const { room } = req.params;
-  const chat = await Chat.find({ room }).sort({ created: 1 }).limit(200);
+  const chat = await Chat.find({ room }).sort({ createdAT: 1 }).limit(200);
   res.json(chat);
 });
 
